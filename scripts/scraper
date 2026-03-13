@@ -5,7 +5,7 @@ import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const OUTPUT = resolve(__dirname, '../public/cards.json');
+const OUTPUT = resolve(__dirname, '../cards.json');
 
 // ─────────────────────────────────────────────
 // CARD METADATA — things that don't change often
