@@ -467,6 +467,8 @@ function runEngine() {
 
     // ── HARD ELIGIBILITY ──
     if (creditScore < c.minScore) eligible = false;
+    // Hard block: if min spend requires more than 2x monthly spend, card is unreachable
+    if (c.minSpend > 0 && (c.minSpend / (c.days / 30)) > monthlySpend * 2) eligible = false;
     if (c.rule524 && cards524 >= 5) eligible = false;
     if (c.isBiz && !hasBiz) eligible = false;
     if (avoid.indexOf(c.bank) !== -1) eligible = false;
