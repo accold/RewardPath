@@ -657,8 +657,8 @@ function runEngine() {
   var non524Cards = eligible.filter(function(c) { return !c.rule524; });
   // Full roadmap: use all Chase slots, then all non-5/24 cards
   var allRoadmap = chase524Cards.concat(non524Cards);
-  // For money math, use full roadmap (capped at 12 for sanity)
-  var top5 = allRoadmap.slice(0, 12);
+  // Full roadmap — no cap
+  var top5 = allRoadmap;
 
   var totalPotential = allRoadmap.reduce(function(s,c) { return s + Math.max(0, c.netVal); }, 0);
 
