@@ -288,15 +288,31 @@ select option{background:var(--surface2);}
   <div class="alert-list" id="alerts"></div>
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
     <div class="sec-head" style="margin:0;flex:1">Active Cards</div>
-    <button class="btn btn-o btn-sm" onclick="toggleAddForm()" style="margin-left:14px">+ Add Card</button>
+    <div style="display:flex;gap:8px;">
+      <button class="btn btn-o btn-sm" onclick="exportCards()">⬇ Export</button>
+      <label class="btn btn-o btn-sm" style="cursor:pointer">⬆ Import<input type="file" accept=".json" onchange="importCards(event)" style="display:none"></label>
+      <button class="btn btn-g btn-sm" onclick="toggleAddForm()">+ Add Card</button>
+    </div>
   </div>
   <div class="add-form" id="addForm">
     <div class="grid2" style="grid-template-columns:1fr 1fr 1fr;gap:14px;">
       <div class="fg"><label>Card Name</label><input id="f_name" placeholder="Chase Sapphire Preferred"></div>
+      <div class="fg"><label>Bank</label>
+        <select id="f_bank">
+          <option value="Chase">Chase</option>
+          <option value="Amex">Amex</option>
+          <option value="Capital One">Capital One</option>
+          <option value="Citi">Citi</option>
+          <option value="Wells Fargo">Wells Fargo</option>
+          <option value="Barclays">Barclays</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="fg"><label>Approval Date</label><input id="f_approval" type="date"></div>
       <div class="fg"><label>Bonus Value ($)</label><input id="f_bonus" type="number" placeholder="750"></div>
       <div class="fg"><label>Min Spend ($)</label><input id="f_min" type="number" placeholder="4000"></div>
+      <div class="fg"><label>Spend Window (days)</label><input id="f_days" type="number" placeholder="90"></div>
       <div class="fg"><label>Already Spent ($)</label><input id="f_spent" type="number" placeholder="0"></div>
-      <div class="fg"><label>Days Remaining</label><input id="f_days" type="number" placeholder="90"></div>
       <div class="fg"><label>Annual Fee ($)</label><input id="f_fee" type="number" placeholder="95"></div>
     </div>
     <button class="btn btn-g btn-sm" onclick="addCard()" style="margin-top:14px">Add Card</button>
@@ -879,33 +895,94 @@ function showResult(html) {
   document.getElementById('result').scrollIntoView({ behavior:'smooth', block:'start' });
 }
 
-var myCards = [
-  { name:'Chase Sapphire Preferred', bank:'Chase', bonus:750, minSpend:4000, spent:2800, daysLeft:23, fee:95, status:'active' },
-  { name:'Amex Gold Card', bank:'Amex', bonus:600, minSpend:4000, spent:4000, daysLeft:47, fee:250, status:'done', feeAlert:true },
-  { name:'Capital One Venture X', bank:'Capital One', bonus:750, minSpend:4000, spent:1200, daysLeft:68, fee:395, status:'active' },
-  { name:'Citi Double Cash', bank:'Citi', bonus:200, minSpend:1500, spent:1500, daysLeft:0, fee:0, status:'complete' },
-];
+// Load cards from localStorage, or start empty
+function loadCards() {
+  try {
+    var saved = localStorage.getItem('rewardpath_cards');
+    if (saved) return JSON.parse(saved);
+  } catch(e) {}
+  return [];
+}
+
+function saveCards() {
+  try {
+    localStorage.setItem('rewardpath_cards', JSON.stringify(myCards));
+  } catch(e) {}
+}
+
+// Calculate real days left from a deadline date string
+function calcDaysLeft(deadlineDateStr) {
+  if (!deadlineDateStr) return 0;
+  var deadline = new Date(deadlineDateStr);
+  var today = new Date();
+  today.setHours(0,0,0,0);
+  deadline.setHours(0,0,0,0);
+  return Math.max(0, Math.round((deadline - today) / 86400000));
+}
+
+// Get deadline date that is N days from approval date
+function deadlineFromApproval(approvalDateStr, days) {
+  var d = new Date(approvalDateStr);
+  d.setDate(d.getDate() + (days || 90));
+  return d.toISOString().split('T')[0];
+}
+
+var myCards = loadCards();
 
 function renderDash() {
+  // Recalculate live daysLeft from deadline date
+  myCards.forEach(function(c) {
+    if (c.deadline) {
+      c.daysLeft = calcDaysLeft(c.deadline);
+      if (c.daysLeft === 0 && c.status === 'active' && c.spent >= c.minSpend) c.status = 'done';
+    }
+  });
+
+  if (myCards.length === 0) {
+    document.getElementById('stats').innerHTML = '';
+    document.getElementById('alerts').innerHTML = '<div class="wi purple"><div class="wi-icon">👋</div><div style="font-size:.78rem;line-height:1.7"><strong style="color:var(--text)">Welcome to your dashboard.</strong><br>Add your first card using the button above. Enter your approval date and spend window and we will track days remaining automatically.</div></div>';
+    document.getElementById('cardList').innerHTML = '';
+    return;
+  }
+
   var earned = myCards.filter(function(c) { return c.status === 'complete' || c.status === 'done'; }).reduce(function(s,c) { return s + c.bonus; }, 0);
   var active = myCards.filter(function(c) { return c.status === 'active'; });
-  var nearestDl = active.length ? Math.min.apply(null, active.map(function(c) { return c.daysLeft; })) : 0;
+  var nearestDl = active.length ? Math.min.apply(null, active.map(function(c) { return c.daysLeft; })) : null;
   var totalFees = myCards.reduce(function(s,c) { return s + c.fee; }, 0);
-  document.getElementById('stats').innerHTML = '<div class="stat"><div class="stat-l">Bonuses Earned</div><div class="stat-v">$' + earned.toLocaleString() + '</div><div class="stat-s">This cycle</div></div>'
+
+  document.getElementById('stats').innerHTML =
+    '<div class="stat"><div class="stat-l">Bonuses Earned</div><div class="stat-v">$' + earned.toLocaleString() + '</div><div class="stat-s">This cycle</div></div>'
     + '<div class="stat"><div class="stat-l">Active Cards</div><div class="stat-v">' + myCards.length + '</div><div class="stat-s">' + active.length + ' bonuses in progress</div></div>'
-    + '<div class="stat"><div class="stat-l">Next Deadline</div><div class="stat-v" style="color:' + (nearestDl < 30 ? 'var(--danger)' : 'var(--warn)') + '">' + nearestDl + 'd</div><div class="stat-s">Days remaining</div></div>'
+    + '<div class="stat"><div class="stat-l">Next Deadline</div><div class="stat-v" style="color:' + (nearestDl !== null && nearestDl < 30 ? 'var(--danger)' : 'var(--warn)') + '">' + (nearestDl !== null ? nearestDl + 'd' : '—') + '</div><div class="stat-s">Days remaining</div></div>'
     + '<div class="stat"><div class="stat-l">Annual Fees</div><div class="stat-v">$' + totalFees + '</div><div class="stat-s">Total yearly cost</div></div>';
+
   var alerts = [];
   myCards.forEach(function(c) {
     if (c.status === 'active' && c.daysLeft < 30) alerts.push({ t:'urgent', i:'🔴', title: c.name + ' — ' + c.daysLeft + ' days left', sub: 'Spent $' + c.spent.toLocaleString() + ' of $' + c.minSpend.toLocaleString() + '. Need $' + (c.minSpend - c.spent).toLocaleString() + ' more.' });
-    if (c.feeAlert) alerts.push({ t:'warn', i:'⚠️', title: c.name + ' — $' + c.fee + ' annual fee due in ' + c.daysLeft + ' days', sub: 'Decide: keep, downgrade to no-fee version, or cancel.' });
+    if (c.feeAlert) alerts.push({ t:'warn', i:'⚠️', title: c.name + ' — annual fee coming up', sub: 'Decide: keep, downgrade to no-fee version, or cancel before it hits.' });
   });
   if (!alerts.length) alerts.push({ t:'good', i:'✅', title:'No urgent alerts', sub:'All timelines on track.' });
-  document.getElementById('alerts').innerHTML = alerts.map(function(a) { return '<div class="alert ' + a.t + '"><div style="font-size:1.1rem;flex-shrink:0">' + a.i + '</div><div><div class="alert-t">' + a.title + '</div><div class="alert-s">' + a.sub + '</div></div></div>'; }).join('');
-  document.getElementById('cardList').innerHTML = myCards.map(function(c) {
-    var pct = Math.min(100, Math.round(c.spent / c.minSpend * 100));
-    var badge = c.status === 'complete' ? '<span class="badge bg">COMPLETE</span>' : c.status === 'done' ? '<span class="badge bp">BONUS EARNED</span>' : c.daysLeft < 30 ? '<span class="badge br">URGENT</span>' : '<span class="badge by">IN PROGRESS</span>';
-    return '<div class="card-row"><div><div class="cn">' + c.name + '</div><div class="cm">' + c.bank + ' · $' + c.fee + '/yr · $' + c.bonus + ' bonus</div></div><div><div class="prog-lbl"><span>Spend</span><span>$' + c.spent.toLocaleString() + ' / $' + c.minSpend.toLocaleString() + '</span></div><div class="prog-bar"><div class="prog-fill" style="width:' + pct + '%"></div></div></div>' + badge + '<div class="dl"><div class="dl-n" style="color:' + (c.daysLeft < 30 && c.status === 'active' ? 'var(--danger)' : 'var(--muted)') + '">' + c.daysLeft + '</div><div style="font-size:.6rem;color:var(--muted)">days left</div></div></div>';
+  document.getElementById('alerts').innerHTML = alerts.map(function(a) {
+    return '<div class="alert ' + a.t + '"><div style="font-size:1.1rem;flex-shrink:0">' + a.i + '</div><div><div class="alert-t">' + a.title + '</div><div class="alert-s">' + a.sub + '</div></div></div>';
+  }).join('');
+
+  document.getElementById('cardList').innerHTML = myCards.map(function(c, idx) {
+    var pct = c.minSpend > 0 ? Math.min(100, Math.round(c.spent / c.minSpend * 100)) : 100;
+    var badge = c.status === 'complete' ? '<span class="badge bg">COMPLETE</span>'
+      : c.status === 'done' ? '<span class="badge bp">BONUS EARNED</span>'
+      : c.daysLeft < 30 ? '<span class="badge br">URGENT</span>'
+      : '<span class="badge by">IN PROGRESS</span>';
+    var deadlineStr = c.deadline ? '<div style="font-size:.62rem;color:var(--muted)">Deadline: ' + new Date(c.deadline).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}) + '</div>' : '';
+    return '<div class="card-row">'
+      + '<div><div class="cn">' + c.name + '</div><div class="cm">' + c.bank + ' · $' + c.fee + '/yr · $' + c.bonus + ' bonus</div>' + deadlineStr + '</div>'
+      + '<div><div class="prog-lbl"><span>Spend progress</span><span>$' + c.spent.toLocaleString() + ' / $' + c.minSpend.toLocaleString() + '</span></div>'
+      + '<div class="prog-bar"><div class="prog-fill" style="width:' + pct + '%"></div></div>'
+      + '<div style="margin-top:6px"><input type="number" placeholder="Update spent $" style="width:100%;padding:5px 8px;font-size:.7rem;" onchange="updateSpent(' + idx + ', this.value)"></div></div>'
+      + badge
+      + '<div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">'
+      + '<div class="dl"><div class="dl-n" style="color:' + (c.daysLeft < 30 && c.status === 'active' ? 'var(--danger)' : 'var(--muted)') + '">' + c.daysLeft + '</div><div style="font-size:.6rem;color:var(--muted)">days left</div></div>'
+      + '<button onclick="removeCard(' + idx + ')" style="font-size:.6rem;color:var(--muted);background:none;border:none;cursor:pointer;padding:0">✕ remove</button>'
+      + '</div></div>';
   }).join('');
 }
 
@@ -914,10 +991,71 @@ function toggleAddForm() { document.getElementById('addForm').classList.toggle('
 function addCard() {
   var name = document.getElementById('f_name').value;
   if (!name) return;
-  myCards.push({ name: name, bank: 'New', bonus: parseInt(document.getElementById('f_bonus').value)||0, minSpend: parseInt(document.getElementById('f_min').value)||0, spent: parseInt(document.getElementById('f_spent').value)||0, daysLeft: parseInt(document.getElementById('f_days').value)||90, fee: parseInt(document.getElementById('f_fee').value)||0, status: 'active' });
+  var approvalDate = document.getElementById('f_approval').value || new Date().toISOString().split('T')[0];
+  var spendDays = parseInt(document.getElementById('f_days').value) || 90;
+  var deadline = deadlineFromApproval(approvalDate, spendDays);
+  myCards.push({
+    name: name,
+    bank: document.getElementById('f_bank').value || 'Other',
+    bonus: parseInt(document.getElementById('f_bonus').value)||0,
+    minSpend: parseInt(document.getElementById('f_min').value)||0,
+    spent: parseInt(document.getElementById('f_spent').value)||0,
+    fee: parseInt(document.getElementById('f_fee').value)||0,
+    status: 'active',
+    approvalDate: approvalDate,
+    deadline: deadline,
+    spendDays: spendDays
+  });
+  saveCards();
   renderDash();
   document.getElementById('addForm').classList.remove('on');
-  ['f_name','f_bonus','f_min','f_spent','f_days','f_fee'].forEach(function(id) { document.getElementById(id).value = ''; });
+  ['f_name','f_bonus','f_min','f_spent','f_days','f_fee','f_approval'].forEach(function(id) { document.getElementById(id).value = ''; });
+}
+
+function removeCard(idx) {
+  if (confirm('Remove this card from your dashboard?')) {
+    myCards.splice(idx, 1);
+    saveCards();
+    renderDash();
+  }
+}
+
+function updateSpent(idx, val) {
+  myCards[idx].spent = parseInt(val) || 0;
+  if (myCards[idx].spent >= myCards[idx].minSpend && myCards[idx].status === 'active') {
+    myCards[idx].status = 'done';
+  }
+  saveCards();
+  renderDash();
+}
+
+function exportCards() {
+  var data = JSON.stringify(myCards, null, 2);
+  var blob = new Blob([data], { type: 'application/json' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'rewardpath-cards.json';
+  a.click();
+}
+
+function importCards(event) {
+  var file = event.target.files[0];
+  if (!file) return;
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      var imported = JSON.parse(e.target.result);
+      if (Array.isArray(imported)) {
+        myCards = imported;
+        saveCards();
+        renderDash();
+        alert('Imported ' + imported.length + ' cards.');
+      }
+    } catch(err) {
+      alert('Invalid file. Please use a RewardPath export JSON.');
+    }
+  };
+  reader.readAsText(file);
 }
 
 function filterCards(el, type) {
