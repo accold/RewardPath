@@ -1,0 +1,11 @@
+{
+  "name": "churncoach-scraper",
+  "version": "1.0.0",
+  "description": "Nightly card offer scraper",
+  "main": "scraper.js",
+  "type": "module",
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "node-fetch": "^3.3.2"
+  }
+}
