@@ -740,6 +740,8 @@ function runEngine() {
   var totalNet = totalBonuses - totalFees2 + totalCredits2;
   var totalMinSpend2 = top5.reduce(function(s,c) { return s + c.minSpend; }, 0);
   var monthsToComplete = Math.ceil(totalMinSpend2 / monthlySpend);
+  var yearsToComplete = (monthsToComplete / 12).toFixed(1);
+  var timeLabel = monthsToComplete <= 12 ? 'Year 1' : monthsToComplete <= 24 ? 'Year 2' : Math.ceil(monthsToComplete / 12) + ' Years';
   var isTravel = goals.indexOf('flights') !== -1 || goals.indexOf('hotels') !== -1 || goals.indexOf('intl') !== -1 || goals.indexOf('biz') !== -1 || goals.indexOf('lounge') !== -1;
   var pointsCards2 = top5.filter(function(c) { return c.hasTransfers; });
   var totalPointsBonuses = pointsCards2.reduce(function(s,c) { return s + c.bonus; }, 0);
@@ -752,11 +754,11 @@ function runEngine() {
 
   // ── SUMMARY BAR ──
   html += '<div class="money-box green">'
-    + '<div style="font-family:Syne,sans-serif;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;">Total Estimated Value — ' + top5.length + ' Cards</div>'
+    + '<div style="font-family:Syne,sans-serif;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;">Total Roadmap Value — ' + top5.length + ' Cards · ~' + monthsToComplete + ' Months</div>'
     + '<div class="money-grid">'
     + '<div class="money-stat"><div class="money-big">$' + totalBonuses.toLocaleString() + '</div><div class="money-lbl">Welcome Bonuses</div><div class="money-sub">~' + monthsToComplete + ' months to earn all</div></div>'
     + '<div class="money-stat"><div class="money-big red">-$' + totalFees2.toLocaleString() + '</div><div class="money-lbl">Annual Fees</div><div class="money-sub">+$' + totalCredits2.toLocaleString() + ' in credits offset this</div></div>'
-    + '<div class="money-stat highlight"><div class="money-big">$' + totalNet.toLocaleString() + '</div><div class="money-lbl">Net Year 1</div><div class="money-sub green">cash equivalent</div></div>'
+    + '<div class="money-stat highlight"><div class="money-big">$' + totalNet.toLocaleString() + '</div><div class="money-lbl">Net Over ' + timeLabel + '</div><div class="money-sub green">~' + monthsToComplete + ' months total</div></div>'
     + '</div></div>';
 
   // ── PER CARD PLAYBOOK ──
