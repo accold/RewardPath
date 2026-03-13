@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-13T14:28:57.128Z",
+  "updatedAt": "2026-03-13T14:31:27.531Z",
   "cardCount": 16,
   "liveCount": 10,
   "cards": [
@@ -28,7 +28,7 @@
       "days": 90,
       "netVal": 705,
       "dataSource": "fallback",
-      "lastUpdated": "2026-03-13T14:28:57.128Z"
+      "lastUpdated": "2026-03-13T14:31:27.531Z"
     },
     {
       "id": "csr",
@@ -55,7 +55,7 @@
       "days": 90,
       "netVal": 1000,
       "dataSource": "doctorofcredit",
-      "lastUpdated": "2026-03-13T14:28:56.880Z"
+      "lastUpdated": "2026-03-13T14:31:27.263Z"
     },
     {
       "id": "ibp",
@@ -83,7 +83,7 @@
       "days": 90,
       "netVal": 905,
       "dataSource": "doctorofcredit",
-      "lastUpdated": "2026-03-13T14:28:56.883Z"
+      "lastUpdated": "2026-03-13T14:31:27.266Z"
     },
     {
       "id": "ibu",
@@ -110,7 +110,7 @@
       "days": 90,
       "netVal": 750,
       "dataSource": "fallback",
-      "lastUpdated": "2026-03-13T14:28:57.128Z"
+      "lastUpdated": "2026-03-13T14:31:27.531Z"
     },
     {
       "id": "ibc",
@@ -137,7 +137,7 @@
       "days": 90,
       "netVal": 750,
       "dataSource": "fallback",
-      "lastUpdated": "2026-03-13T14:28:57.128Z"
+      "lastUpdated": "2026-03-13T14:31:27.531Z"
     },
     {
       "id": "ff",
@@ -165,7 +165,7 @@
       "days": 90,
       "netVal": 200,
       "dataSource": "fallback",
-      "lastUpdated": "2026-03-13T14:28:57.128Z"
+      "lastUpdated": "2026-03-13T14:31:27.531Z"
     },
     {
       "id": "amexplat",
@@ -191,7 +191,7 @@
       "days": 90,
       "netVal": 1655,
       "dataSource": "doctorofcredit",
-      "lastUpdated": "2026-03-13T14:28:56.881Z"
+      "lastUpdated": "2026-03-13T14:31:27.263Z"
     },
     {
       "id": "amexgold",
@@ -218,7 +218,7 @@
       "days": 90,
       "netVal": 340,
       "dataSource": "doctorofcredit",
-      "lastUpdated": "2026-03-13T14:28:56.883Z"
+      "lastUpdated": "2026-03-13T14:31:27.266Z"
     },
     {
       "id": "amexbizplat",
@@ -245,7 +245,7 @@
       "days": 90,
       "netVal": 2405,
       "dataSource": "doctorofcredit",
-      "lastUpdated": "2026-03-13T14:28:56.883Z"
+      "lastUpdated": "2026-03-13T14:31:27.266Z"
     },
     {
       "id": "bbp",
@@ -271,7 +271,7 @@
       "days": 90,
       "netVal": 750,
       "dataSource": "doctorofcredit",
-      "lastUpdated": "2026-03-13T14:28:56.883Z"
+      "lastUpdated": "2026-03-13T14:31:27.266Z"
     },
     {
       "id": "venturex",
@@ -297,7 +297,7 @@
       "days": 90,
       "netVal": 1905,
       "dataSource": "doctorofcredit",
-      "lastUpdated": "2026-03-13T14:28:56.883Z"
+      "lastUpdated": "2026-03-13T14:31:27.266Z"
     },
     {
       "id": "venture",
@@ -323,7 +323,7 @@
       "days": 90,
       "netVal": 655,
       "dataSource": "doctorofcredit",
-      "lastUpdated": "2026-03-13T14:28:56.881Z"
+      "lastUpdated": "2026-03-13T14:31:27.264Z"
     },
     {
       "id": "strata",
@@ -352,7 +352,7 @@
       "days": 90,
       "netVal": 605,
       "dataSource": "fallback",
-      "lastUpdated": "2026-03-13T14:28:57.128Z"
+      "lastUpdated": "2026-03-13T14:31:27.531Z"
     },
     {
       "id": "doubecash",
@@ -378,7 +378,7 @@
       "days": 90,
       "netVal": 100,
       "dataSource": "doctorofcredit",
-      "lastUpdated": "2026-03-13T14:28:56.882Z"
+      "lastUpdated": "2026-03-13T14:31:27.265Z"
     },
     {
       "id": "wfaj",
@@ -406,7 +406,7 @@
       "days": 90,
       "netVal": 955,
       "dataSource": "doctorofcredit",
-      "lastUpdated": "2026-03-13T14:28:56.883Z"
+      "lastUpdated": "2026-03-13T14:31:27.266Z"
     },
     {
       "id": "barcavoy",
@@ -432,7 +432,7 @@
       "days": 90,
       "netVal": 501,
       "dataSource": "fallback",
-      "lastUpdated": "2026-03-13T14:28:57.128Z"
+      "lastUpdated": "2026-03-13T14:31:27.531Z"
     }
   ]
 }
