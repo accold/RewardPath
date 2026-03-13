@@ -739,8 +739,9 @@ function runEngine() {
   var totalCredits2 = top5.reduce(function(s,c) { return s + (c.credits || 0); }, 0);
   var totalNet = totalBonuses - totalFees2 + totalCredits2;
   var totalMinSpend2 = top5.reduce(function(s,c) { return s + c.minSpend; }, 0);
-  var monthsToComplete = Math.ceil(totalMinSpend2 / monthlySpend);
-  var yearsToComplete = (monthsToComplete / 12).toFixed(1);
+  // Timeline = cards × 3 months between apps (cards run in parallel, not sequential)
+  // Each card is applied for ~3 months apart; spend overlaps across cards
+  var monthsToComplete = top5.length * 3;
   var timeLabel = monthsToComplete <= 12 ? 'Year 1' : monthsToComplete <= 24 ? 'Year 2' : Math.ceil(monthsToComplete / 12) + ' Years';
   var isTravel = goals.indexOf('flights') !== -1 || goals.indexOf('hotels') !== -1 || goals.indexOf('intl') !== -1 || goals.indexOf('biz') !== -1 || goals.indexOf('lounge') !== -1;
   var pointsCards2 = top5.filter(function(c) { return c.hasTransfers; });
