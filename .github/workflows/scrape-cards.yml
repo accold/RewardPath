@@ -32,4 +32,4 @@ jobs:
           git config user.email "bot@churncoach"
           git add cards.json
           git diff --staged --quiet || git commit -m "chore: update card offers $(date -u +%Y-%m-%d)"
-          git push
+          git push --force
