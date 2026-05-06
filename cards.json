@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-05-05T09:53:01.720Z",
-  "cardCount": 49,
+  "updatedAt": "2026-05-06T10:09:11.906Z",
+  "cardCount": 50,
   "sourceBreakdown": {
-    "doctorofcredit": 49,
+    "doctorofcredit": 50,
     "frequentmiler": 0
   },
   "cards": [
@@ -22,7 +22,7 @@
       "applyUrl": "https://www.bankofamerica.com/credit-cards/",
       "why": "These seem to be frequently hanging at the moment.",
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.420Z"
+      "scrapedAt": "2026-05-06T10:09:11.667Z"
     },
     {
       "id": "amex-marriott-brilliant",
@@ -40,7 +40,7 @@
       "applyUrl": "https://www.americanexpress.com/us/credit-cards/card/marriott-bonvoy-brilliant/",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.417Z"
+      "scrapedAt": "2026-05-06T10:09:11.664Z"
     },
     {
       "id": "amex-business-gold",
@@ -58,7 +58,7 @@
       "applyUrl": "https://www.americanexpress.com/us/credit-cards/card/business-gold/",
       "why": "Should now show for everybody when using certain referral links.",
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.419Z"
+      "scrapedAt": "2026-05-06T10:09:11.666Z"
     },
     {
       "id": "amex-business-platinum",
@@ -76,7 +76,7 @@
       "applyUrl": "https://www.americanexpress.com/us/credit-cards/card/business-platinum/",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.419Z"
+      "scrapedAt": "2026-05-06T10:09:11.666Z"
     },
     {
       "id": "amex-platinum",
@@ -94,7 +94,7 @@
       "applyUrl": "https://www.americanexpress.com/us/credit-cards/card/platinum/",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.415Z"
+      "scrapedAt": "2026-05-06T10:09:11.663Z"
     },
     {
       "id": "amex-marriott-bevy",
@@ -112,7 +112,7 @@
       "applyUrl": "https://www.americanexpress.com/us/credit-cards/",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.417Z"
+      "scrapedAt": "2026-05-06T10:09:11.665Z"
     },
     {
       "id": "chase-sapphire-reserve",
@@ -130,7 +130,7 @@
       "applyUrl": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
       "why": "15-,000 points is the highest ever bonus. The card does have a $795 fee. Great offer for the first year, especially if you can use some of the benefits.",
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.414Z"
+      "scrapedAt": "2026-05-06T10:09:11.662Z"
     },
     {
       "id": "capital-one-business-spark-cash",
@@ -148,7 +148,7 @@
       "applyUrl": "https://creditcards.capitalone.com/spark-cash-plus/",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.419Z"
+      "scrapedAt": "2026-05-06T10:09:11.667Z"
     },
     {
       "id": "capital-one-venture-business-venture-onebusiness",
@@ -166,7 +166,25 @@
       "applyUrl": "https://creditcards.capitalone.com/venture-credit-card/",
       "why": "American Express Marriott Business – 5 Free Nights",
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.419Z"
+      "scrapedAt": "2026-05-06T10:09:11.667Z"
+    },
+    {
+      "id": "barclays-jetblue-premier",
+      "bank": "Barclays",
+      "name": "Jetblue Premier",
+      "bonus": 1000,
+      "bonusPts": "100,000 pts",
+      "minSpend": 5000,
+      "days": 90,
+      "fee": 499,
+      "credits": 0,
+      "isBiz": false,
+      "rule524": false,
+      "hasTransfers": false,
+      "applyUrl": "https://cards.barclaycardus.com/banking/cards/jetblue-card/",
+      "why": null,
+      "dataSource": "doctorofcredit",
+      "scrapedAt": "2026-05-06T10:09:11.665Z"
     },
     {
       "id": "chase-ink-business-preferred",
@@ -184,7 +202,7 @@
       "applyUrl": "https://creditcards.chase.com/business-credit-cards/ink/preferred",
       "why": "Card has a $95 annual fee but this offer only requires $8,000 in spend.",
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.419Z"
+      "scrapedAt": "2026-05-06T10:09:11.666Z"
     },
     {
       "id": "chase-sapphire-reserve-for-business-150k-points",
@@ -202,7 +220,7 @@
       "applyUrl": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
       "why": "Used to be 200k bonus, but we’ll leave it here since some might still be interested. Remember, it also has a hefty $795 annual fee.",
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.419Z"
+      "scrapedAt": "2026-05-06T10:09:11.667Z"
     },
     {
       "id": "barclays-gm-business-card",
@@ -220,7 +238,7 @@
       "applyUrl": "https://cards.barclaycardus.com",
       "why": "This is a $1,000 credit for GM purchases.",
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.419Z"
+      "scrapedAt": "2026-05-06T10:09:11.667Z"
     },
     {
       "id": "chase-united-quest-card",
@@ -238,7 +256,7 @@
       "applyUrl": "https://creditcards.chase.com",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.417Z"
+      "scrapedAt": "2026-05-06T10:09:11.665Z"
     },
     {
       "id": "citi-aadvantage-globe",
@@ -256,7 +274,7 @@
       "applyUrl": "https://www.citi.com/credit-cards/citi-aadvantage-platinum-select",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.417Z"
+      "scrapedAt": "2026-05-06T10:09:11.665Z"
     },
     {
       "id": "chase-british-airways",
@@ -274,7 +292,25 @@
       "applyUrl": "https://creditcards.chase.com",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.418Z"
+      "scrapedAt": "2026-05-06T10:09:11.665Z"
+    },
+    {
+      "id": "citi-aadvantage-globe-card",
+      "bank": "Citi",
+      "name": "AAdvantage Globe Card",
+      "bonus": 900,
+      "bonusPts": "90,000 pts",
+      "minSpend": 3000,
+      "days": 90,
+      "fee": 95,
+      "credits": 0,
+      "isBiz": false,
+      "rule524": false,
+      "hasTransfers": true,
+      "applyUrl": "https://www.citi.com/credit-cards/citi-aadvantage-platinum-select",
+      "why": null,
+      "dataSource": "doctorofcredit",
+      "scrapedAt": "2026-05-06T10:09:11.668Z"
     },
     {
       "id": "chase-aeroplan",
@@ -292,7 +328,7 @@
       "applyUrl": "https://creditcards.chase.com",
       "why": "This only requires $4,000 in spend compared to the 100,000 offer that is sometimes available that requires $20,000.",
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.418Z"
+      "scrapedAt": "2026-05-06T10:09:11.665Z"
     },
     {
       "id": "citi-aadvantage-platinum-select",
@@ -310,7 +346,7 @@
       "applyUrl": "https://www.americanexpress.com/us/credit-cards/card/platinum/",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.417Z"
+      "scrapedAt": "2026-05-06T10:09:11.665Z"
     },
     {
       "id": "capital-one-venture",
@@ -328,7 +364,7 @@
       "applyUrl": "https://creditcards.capitalone.com/venture-credit-card/",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.416Z"
+      "scrapedAt": "2026-05-06T10:09:11.664Z"
     },
     {
       "id": "bank-of-america-premium-rewards-elite",
@@ -346,7 +382,7 @@
       "applyUrl": "https://www.bankofamerica.com/credit-cards/products/premium-rewards-elite-credit-card/",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.418Z"
+      "scrapedAt": "2026-05-06T10:09:11.665Z"
     },
     {
       "id": "barclays-jetblue-plus",
@@ -364,7 +400,7 @@
       "applyUrl": "https://cards.barclaycardus.com/banking/cards/jetblue-plus-card/",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.418Z"
+      "scrapedAt": "2026-05-06T10:09:11.666Z"
     },
     {
       "id": "capital-one-business-spark-cash-select",
@@ -382,7 +418,7 @@
       "applyUrl": "https://creditcards.capitalone.com/spark-cash-plus/",
       "why": "Capital One Business Spark Cash Plus – $2,000",
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.419Z"
+      "scrapedAt": "2026-05-06T10:09:11.667Z"
     },
     {
       "id": "amex-blue-business-plus",
@@ -400,7 +436,7 @@
       "applyUrl": "https://www.americanexpress.com/us/credit-cards/card/blue-business-plus/",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.420Z"
+      "scrapedAt": "2026-05-06T10:09:11.667Z"
     },
     {
       "id": "amex-various-delta-offers",
@@ -418,7 +454,7 @@
       "applyUrl": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-gold/",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.420Z"
+      "scrapedAt": "2026-05-06T10:09:11.667Z"
     },
     {
       "id": "bank-of-america-air-france-klm-flyingblue",
@@ -436,7 +472,7 @@
       "applyUrl": "https://www.bankofamerica.com/credit-cards/",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.417Z"
+      "scrapedAt": "2026-05-06T10:09:11.665Z"
     },
     {
       "id": "amex-business-delta",
@@ -454,25 +490,7 @@
       "applyUrl": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-gold/",
       "why": "This requires a dummy booking to see this offer.",
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.419Z"
-    },
-    {
-      "id": "bank-of-america-spirit-free-spirit-credit-card",
-      "bank": "Bank of America",
-      "name": "Spirit ‘Free Spirit’ Credit Card,",
-      "bonus": 650,
-      "bonusPts": "65,000 pts",
-      "minSpend": 1000,
-      "days": 90,
-      "fee": 95,
-      "credits": 0,
-      "isBiz": false,
-      "rule524": false,
-      "hasTransfers": false,
-      "applyUrl": "https://www.bankofamerica.com/credit-cards/",
-      "why": "Requires $1,000 in spend and a flight attendant code (provided in post).",
-      "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.418Z"
+      "scrapedAt": "2026-05-06T10:09:11.667Z"
     },
     {
       "id": "citi-aadvantage-business",
@@ -490,7 +508,7 @@
       "applyUrl": "https://www.citi.com/credit-cards/citi-aadvantage-platinum-select",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.419Z"
+      "scrapedAt": "2026-05-06T10:09:11.667Z"
     },
     {
       "id": "bank-of-america-premium-rewards",
@@ -508,7 +526,7 @@
       "applyUrl": "https://www.bankofamerica.com/credit-cards/products/premium-rewards-credit-card/",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.418Z"
+      "scrapedAt": "2026-05-06T10:09:11.665Z"
     },
     {
       "id": "wells-fargo-autograph-journey",
@@ -526,7 +544,7 @@
       "applyUrl": "https://creditcards.wellsfargo.com/autograph-journey-visa-credit-card/",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.418Z"
+      "scrapedAt": "2026-05-06T10:09:11.665Z"
     },
     {
       "id": "chase-marriott-bold",
@@ -544,7 +562,7 @@
       "applyUrl": "https://creditcards.chase.com/travel-credit-cards/marriott",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.418Z"
+      "scrapedAt": "2026-05-06T10:09:11.665Z"
     },
     {
       "id": "chase-marriott-bonvoy-boundless",
@@ -562,7 +580,7 @@
       "applyUrl": "https://creditcards.chase.com/travel-credit-cards/marriott",
       "why": "Most people will prefer the 5 free night option above, but this is another option.",
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.416Z"
+      "scrapedAt": "2026-05-06T10:09:11.664Z"
     },
     {
       "id": "amex-delta-gold",
@@ -580,7 +598,7 @@
       "applyUrl": "https://www.americanexpress.com/us/credit-cards/card/gold-card/",
       "why": "American Express Blue Cash Preferred $300 + Waived Fee",
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.419Z"
+      "scrapedAt": "2026-05-06T10:09:11.666Z"
     },
     {
       "id": "wells-fargo-signify-business",
@@ -598,7 +616,7 @@
       "applyUrl": "https://creditcards.wellsfargo.com",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.420Z"
+      "scrapedAt": "2026-05-06T10:09:11.667Z"
     },
     {
       "id": "bank-of-america-business-ucr-ccr-tr",
@@ -616,7 +634,7 @@
       "applyUrl": "https://www.bankofamerica.com/credit-cards/",
       "why": "Truist Premium Business Card: $1,000 Bonus After $15,000 In Spend [AL, AR, GA, FL, IN, KY, MD, MS, NC, NJ, OH, PA, SC, TN, TX, VA, WV or DC]",
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.420Z"
+      "scrapedAt": "2026-05-06T10:09:11.667Z"
     },
     {
       "id": "amex-blue-business-cash",
@@ -634,7 +652,7 @@
       "applyUrl": "https://www.americanexpress.com/us/credit-cards/card/blue-business-cash/",
       "why": "Deal requires $15,000 in total spending for the full bonus, but the upside is that this card earns 2% cash back on up to $50,000 annually.",
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.420Z"
+      "scrapedAt": "2026-05-06T10:09:11.667Z"
     },
     {
       "id": "us-bank-u-s-bank-altitude-connect",
@@ -652,7 +670,7 @@
       "applyUrl": "https://www.usbank.com/credit-cards/altitude-connect-visa-signature-credit-card.html",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.418Z"
+      "scrapedAt": "2026-05-06T10:09:11.666Z"
     },
     {
       "id": "barclays-upromise",
@@ -670,7 +688,7 @@
       "applyUrl": "https://cards.barclaycardus.com",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.419Z"
+      "scrapedAt": "2026-05-06T10:09:11.666Z"
     },
     {
       "id": "amex-blue-cash-preferred",
@@ -688,7 +706,7 @@
       "applyUrl": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/",
       "why": "Without a referral link the offer is for $250. With a referral link some people sometimes see $300. Annual fee is waived the first year with this offer. There is a $3,000 spend requirement.",
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.419Z"
+      "scrapedAt": "2026-05-06T10:09:11.666Z"
     },
     {
       "id": "citi-at-t-points-plus",
@@ -706,7 +724,7 @@
       "applyUrl": "https://www.citi.com/credit-cards/compare/view-all-credit-cards",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.419Z"
+      "scrapedAt": "2026-05-06T10:09:11.666Z"
     },
     {
       "id": "amex-blue-cash-everyday",
@@ -724,7 +742,7 @@
       "applyUrl": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-everyday/",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.419Z"
+      "scrapedAt": "2026-05-06T10:09:11.666Z"
     },
     {
       "id": "amex-everyday",
@@ -742,7 +760,7 @@
       "applyUrl": "https://www.americanexpress.com/us/credit-cards/",
       "why": "Various American Express Delta Offers – No Lifetime Language",
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.420Z"
+      "scrapedAt": "2026-05-06T10:09:11.667Z"
     },
     {
       "id": "citi-double-cash",
@@ -760,7 +778,7 @@
       "applyUrl": "https://www.citi.com/credit-cards/citi-double-cash-credit-card",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.418Z"
+      "scrapedAt": "2026-05-06T10:09:11.666Z"
     },
     {
       "id": "wells-fargo-active-cash",
@@ -778,7 +796,7 @@
       "applyUrl": "https://creditcards.wellsfargo.com/active-cash-credit-card/",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.418Z"
+      "scrapedAt": "2026-05-06T10:09:11.666Z"
     },
     {
       "id": "bank-of-america-personal-unlimited-cash-rewards",
@@ -796,7 +814,7 @@
       "applyUrl": "https://www.bankofamerica.com/credit-cards/",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.419Z"
+      "scrapedAt": "2026-05-06T10:09:11.666Z"
     },
     {
       "id": "discover-it-miles",
@@ -814,7 +832,7 @@
       "applyUrl": "https://www.discover.com/credit-cards/cash-back/it-card.html",
       "why": "Offer only available via a referral. The nice thing about this card is cash back earned is double the first year (unfortunately the sign up bonus doesn’t double), meaning this card earns 3% cash back on all purchases ...",
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.419Z"
+      "scrapedAt": "2026-05-06T10:09:11.666Z"
     },
     {
       "id": "citi-custom-cash",
@@ -832,25 +850,25 @@
       "applyUrl": "https://www.citi.com/credit-cards/citi-custom-cash-credit-card",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.419Z"
+      "scrapedAt": "2026-05-06T10:09:11.666Z"
     },
     {
-      "id": "amex-update",
-      "bank": "Amex",
-      "name": "(Update:",
-      "bonus": 200,
-      "bonusPts": "$200",
+      "id": "chase-existing-united-cardholders-earn",
+      "bank": "Chase",
+      "name": "Existing United Cardholders: Earn",
+      "bonus": 100,
+      "bonusPts": "10,000 miles",
       "minSpend": 3000,
       "days": 90,
       "fee": 95,
       "credits": 0,
       "isBiz": false,
-      "rule524": false,
+      "rule524": true,
       "hasTransfers": true,
-      "applyUrl": "https://www.americanexpress.com/us/credit-cards/",
+      "applyUrl": "https://creditcards.chase.com",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.420Z"
+      "scrapedAt": "2026-05-06T10:09:11.668Z"
     },
     {
       "id": "amex-add-an-authorized-user-get",
@@ -868,7 +886,7 @@
       "applyUrl": "https://www.americanexpress.com/us/credit-cards/",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.420Z"
+      "scrapedAt": "2026-05-06T10:09:11.668Z"
     },
     {
       "id": "barclays-priceline",
@@ -886,7 +904,7 @@
       "applyUrl": "https://cards.barclaycardus.com",
       "why": null,
       "dataSource": "doctorofcredit",
-      "scrapedAt": "2026-05-05T09:53:01.418Z"
+      "scrapedAt": "2026-05-06T10:09:11.666Z"
     }
   ]
 }
